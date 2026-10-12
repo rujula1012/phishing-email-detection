@@ -1,4 +1,3 @@
-@'
 # PhishGuard — Phishing Email Detection
 
 An AIES project that uses Natural Language Processing (NLP) and machine learning to classify email text as **phishing** or **legitimate**.
