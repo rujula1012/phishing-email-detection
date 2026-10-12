@@ -125,4 +125,3 @@ python evaluation/test_emails.py
 ## Project Purpose
 
 This project demonstrates text preprocessing, TF-IDF feature extraction, supervised machine learning, model evaluation, and deployment through a Streamlit interface.
-'@ | Set-Content -Encoding utf8 README.md
