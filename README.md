@@ -1,24 +1,20 @@
-<<<<<<< HEAD
-=======
-
 @'
->>>>>>> 24c1404 (Improve project documentation)
 # PhishGuard — Phishing Email Detection
 
 An AIES project that uses Natural Language Processing (NLP) and machine learning to classify email text as **phishing** or **legitimate**.
 
 ## Overview
 
-PhishGuard uses TF-IDF to convert email text into numerical features and a trained Logistic Regression model to predict the email category. A Streamlit web interface allows users to enter email text and view the prediction.
+PhishGuard uses TF-IDF to convert email text into numerical features and a trained Logistic Regression model to predict the email category. A Streamlit web application allows users to enter email text and view the prediction.
 
 ## Features
 
 - Classifies email text as phishing or legitimate.
-- Uses TF-IDF text vectorization.
-- Uses a trained Logistic Regression classifier.
+- Converts email text into numerical features using TF-IDF.
+- Uses a trained Logistic Regression model.
 - Displays evaluation metrics and a confusion matrix.
 - Provides an interactive Streamlit interface.
-- Supports testing sample emails.
+- Supports sample-email testing.
 
 ## Technologies Used
 
@@ -33,12 +29,10 @@ PhishGuard uses TF-IDF to convert email text into numerical features and a train
 
 ## Project Structure
 
-```text
+```text id="r7p0d4"
 phishing-email-detection/
 ├── app/
 │   └── streamlit_app.py
-├── dataset/
-│   └── cleaned_dataset.csv
 ├── evaluation/
 │   ├── evaluate_model.py
 │   ├── test_emails.py
@@ -47,86 +41,59 @@ phishing-email-detection/
 ├── model/
 │   ├── phishing_model.pkl
 │   └── tfidf_vectorizer.pkl
-├── .gitignore
+├── dataset/
+│   └── cleaned_dataset.csv  (obtained separately)
 ├── requirements.txt
-├── README.md
-└── train_model.py
+├── train_model.py
+└── README.md
 ```
 
 ## Setup and Installation
 
 ### 1. Clone the repository
 
-```bash
+```bash id="qz5j9w"
 git clone https://github.com/rujula1012/phishing-email-detection.git
 cd phishing-email-detection
 ```
 
-<<<<<<< HEAD
-### 2. Create and activate a virtual environment
-
-Windows PowerShell:
-=======
 ### 2. Create a virtual environment
->>>>>>> 24c1404 (Improve project documentation)
 
-```powershell
+For Windows PowerShell:
+
+```powershell id="b3s8kt"
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
 ### 3. Install dependencies
 
-```bash
+```powershell id="t5m2pv"
 python -m pip install -r requirements.txt
 ```
 
-<<<<<<< HEAD
-### 4. Prepare the dataset and model files
-
-The application requires these files:
-
-- `dataset/cleaned_dataset.csv`
-- `model/phishing_model.pkl`
-- `model/tfidf_vectorizer.pkl`
-
-The cleaned dataset is not included in the Git repository because of its file size. Obtain it from the project team and place it in the `dataset/` directory.
-
-The saved model and vectorizer are included in the repository. If they are unavailable, regenerate them by running the training script after placing the dataset in the correct location.
-
-### 5. Run the web application
-
-From the project root, run:
-=======
 ### 4. Prepare the required files
 
-The application requires:
+The application requires these saved files:
 
 - `model/phishing_model.pkl`
 - `model/tfidf_vectorizer.pkl`
 
-To retrain the model or reproduce evaluation, obtain the cleaned dataset from the project team and place it at `dataset/cleaned_dataset.csv`. The dataset is not included in this repository because of its size.
+The cleaned dataset is approximately 261 MB and is not included in this repository. Obtain `cleaned_dataset.csv` from the project team and place it in the `dataset/` directory if you need to retrain the model or reproduce the evaluation.
 
 ### 5. Run the application
 
-From the project root:
->>>>>>> 24c1404 (Improve project documentation)
+From the project root, run:
 
-```bash
+```powershell id="w6k1cy"
 python -m streamlit run app/streamlit_app.py
 ```
 
-<<<<<<< HEAD
-Streamlit will provide a local URL where you can open the application.
+Streamlit will provide a local URL to open the application in your browser.
 
-## Model Evaluation
-
-The saved model was evaluated on a held-out test set using accuracy, precision, recall, F1-score, a classification report, and a confusion matrix.
-=======
 ## Model Evaluation
 
 The model was evaluated on a held-out test set containing 34,365 emails.
->>>>>>> 24c1404 (Improve project documentation)
 
 | Metric | Score |
 |---|---:|
@@ -135,48 +102,28 @@ The model was evaluated on a held-out test set containing 34,365 emails.
 | Weighted Recall | 96.62% |
 | Weighted F1-score | 96.62% |
 
-<<<<<<< HEAD
-The test set contained 34,365 emails.
-
 Evaluation outputs are available in the `evaluation/` directory.
-=======
-Evaluation outputs are saved in the `evaluation/` directory.
->>>>>>> 24c1404 (Improve project documentation)
 
-To reproduce the evaluation, run:
+To reproduce the evaluation:
 
-```bash
+```powershell id="p5j3dz"
 python evaluation/evaluate_model.py
 ```
 
-<<<<<<< HEAD
-To test the sample emails, run:
-=======
-To test sample emails, run:
->>>>>>> 24c1404 (Improve project documentation)
+To test sample emails:
 
-```bash
+```powershell id="n4v8sy"
 python evaluation/test_emails.py
 ```
 
 ## Limitations
 
-<<<<<<< HEAD
-- Predictions depend on the training dataset and the patterns learned by the model.
-- High evaluation scores do not guarantee accurate predictions for every real-world email.
-- A prediction of legitimate does not guarantee that an email is safe.
-=======
-- Predictions depend on the patterns learned from the training dataset.
+- Predictions depend on patterns learned from the training dataset.
 - High evaluation scores do not guarantee accurate predictions on every real-world email.
-- A legitimate prediction does not guarantee that an email is safe.
->>>>>>> 24c1404 (Improve project documentation)
-- This project is an educational prototype and should not be used as the sole basis for security decisions.
+- A prediction of legitimate does not guarantee that an email is safe.
+- This is an educational prototype and should not be used as the sole basis for security decisions.
 
 ## Project Purpose
 
-<<<<<<< HEAD
-This project demonstrates text preprocessing, feature extraction using TF-IDF, supervised machine learning, model evaluation, and deployment through a Streamlit interface.
-=======
 This project demonstrates text preprocessing, TF-IDF feature extraction, supervised machine learning, model evaluation, and deployment through a Streamlit interface.
 '@ | Set-Content -Encoding utf8 README.md
->>>>>>> 24c1404 (Improve project documentation)
