@@ -125,3 +125,42 @@ python evaluation/test_emails.py
 ## Project Purpose
 
 This project demonstrates text preprocessing, TF-IDF feature extraction, supervised machine learning, model evaluation, and deployment through a Streamlit interface.
+
+
+## CI/CD Implementation
+
+### Project Workflow
+
+The Phishing Email Detection application uses a CI/CD workflow to automate testing, containerization, and deployment.
+
+1. **Source Control:** GitHub stores the application source code and pipeline configuration.
+2. **Continuous Integration:** Jenkins checks out the repository and runs Python syntax checks and model prediction tests.
+3. **Containerization:** Docker builds a container image containing the Streamlit application and trained model.
+4. **Image Registry:** The container image is pushed to Docker Hub.
+5. **Continuous Deployment:** Kubernetes manifests define the application Deployment and Service, with Minikube used as the local Kubernetes environment.
+6. **Verification:** Deployment status, running pods, and application accessibility are checked.
+
+### CI/CD Files
+
+- `Dockerfile` — defines the application container image.
+- `.dockerignore` — excludes unnecessary files from the Docker build context.
+- `Jenkinsfile` — defines the automated pipeline stages.
+- `tests/test_model.py` — checks model loading and prediction.
+- `k8s/deployment.yaml` — defines the Kubernetes Deployment.
+- `k8s/service.yaml` — defines how the application is exposed.
+
+### Testing
+
+The model prediction test is executed using:
+
+```bash
+python -m pytest -q tests
+```
+
+The test verifies that the saved model and TF-IDF vectorizer load successfully and that the model returns a prediction for a sample email.
+
+### Deployment Environment
+
+The intended deployment environment consists of Jenkins running on AWS EC2, Docker Hub for image storage, and Minikube for Kubernetes deployment.
+
+The pipeline must be executed successfully to verify the complete CI/CD workflow.
