@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phishing-detector
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: phishing-detector
+  template:
+    metadata:
+      labels:
+        app: phishing-detector
+    spec:
+      containers:
+        - name: phishing-detector
+          image: YOUR_DOCKERHUB_USER/phishing-detector:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8501
+          resources:
+            requests:
+              memory: "512Mi"
+            limits:
+              memory: "1Gi"
