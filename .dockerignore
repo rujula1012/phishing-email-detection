@@ -1,0 +1,6 @@
+dataset/
+evaluation/
+.venv/
+.git/
+__pycache__/
+*.csv
