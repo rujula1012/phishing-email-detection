@@ -60,7 +60,7 @@ from pathlib import Path
 
 # ---------------- PAGE CONFIGURATION ----------------
 st.set_page_config(
-    page_title="PhishGuard | Email Security",
+   page_title="PhishGuard v2 | Email Security",
     page_icon="🛡️",
     layout="wide"
 )
@@ -120,7 +120,7 @@ except Exception as error:
 # ---------------- HEADER ----------------
 st.markdown("""
 <div class="hero">
-    <h1>🛡️ PhishGuard</h1>
+    <h1>🛡️ PhishGuard v2</h1>
     <p>AI-powered phishing email detection</p>
     <p>Analyze email text with a machine-learning model
     trained to classify messages as phishing or legitimate.</p>
