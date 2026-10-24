@@ -4,7 +4,7 @@ pipeline {
     triggers { githubPush() }
 
     environment {
-        IMAGE_NAME = 'YOUR_DOCKERHUB_USER/phishing-detector'
+        IMAGE_NAME = 'rsk1012/phishing-detector'
         IMAGE_TAG  = "${BUILD_NUMBER}"
     }
 
