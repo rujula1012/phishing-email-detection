@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: phishing-detector
-          image: YOUR_DOCKERHUB_USER/phishing-detector:latest
+          image: rsk1012/phishing-detector:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8501
